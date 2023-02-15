@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .about__bio-image {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .about__bio-image {
@@ -10,7 +14,7 @@
   p {
     font-size: 1.5rem;
     margin: 4rem;
-    color: $secondary-color;
+    color: $text-color;
     font-family: $font-family-techno;
     line-height: 2rem;
   }

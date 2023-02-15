@@ -7,10 +7,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 
   &__name {
-    font-size: 5rem;
+    font-size: 2rem;
     border-bottom: 2px solid $text-color;
     font-family: $font-family-techno;
 

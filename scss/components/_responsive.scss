@@ -1,95 +1,50 @@
-//*****************************************************
-//*   RESPONSIVE
-//*****************************************************
-@include custom {
-  .about-bgImg-container {
-    @include bgImg(70vh, $main-bgImg-path);
-  }
-}
-
-@include media-xsm {
-  .nav {
-    padding: 0.5rem;
-    &__list {
-      text-align: center;
-    }
-    &__item {
-      padding-right: 0.7rem;
-    }
-    .nav__link {
-      font-size: 0.9rem;
-    }
-  }
-  .contact {
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    &__list {
-      gap: 2rem 1.2rem;
-      font-size: 1.2rem;
-    }
-  }
-}
+// //*****************************************************
+// //*   RESPONSIVE
+// //*****************************************************
 @include media-sm {
-  .nav {
-    padding: 0.7rem;
-    &__list {
-      text-align: right;
-    }
-    &__item {
-      padding-right: 1rem;
-    }
-    .nav__link {
-      font-size: 1rem;
-    }
+  .about-bgImg-container {
+    @include bgImg(40vh, $main-bgImg-path);
   }
-  .contact {
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-    &__list {
-      gap: 2.5rem 2rem;
-      font-size: 1.5rem;
+  .about__bio-image {
+    p {
+      display: none;
     }
   }
 }
 
 @include media-md {
   .nav {
-    &__item {
-      padding-right: 1.3rem;
+    &__center {
+      display: flex;
+      justify-content: flex-end;
     }
-    .nav__link {
-      font-size: 1.3rem;
+    &__toggle {
+      display: none;
+    }
+    &__list {
+      display: flex;
+    }
+    &__link {
+      font-size: 1.2rem;
     }
   }
+  .home__name {
+    font-size: 3rem;
+  }
   .projects__item {
-    width: 50%;
+    width: 45%;
+  }
+  footer.horizontal {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
 @include media-lg {
-  .nav {
-    &__item {
-      padding-right: 1.5rem;
-    }
-    .nav__link {
-      font-size: 1.5rem;
-    }
+  .home__name {
+    font-size: 5rem;
   }
-
   .projects__item {
-    width: 30%;
+    width: 32%;
   }
-  // .contact__list {
-  //   flex-direction: row;
-  // }
 }
-
-// @include media-xl {
-//   .projects__item {
-//     width: 30%;
-//   }
-// }

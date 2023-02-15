@@ -11,8 +11,9 @@
 footer.horizontal {
   height: 10vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   padding: 1rem;
   @extend .link-style;
 }

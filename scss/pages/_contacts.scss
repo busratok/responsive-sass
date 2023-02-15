@@ -19,14 +19,17 @@
 
   &__list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+
     font-size: 1.5rem;
     gap: 3rem;
     justify-content: center;
     align-items: flex-start;
   }
-  .text-secondary {
+  i {
     color: $secondary-color;
+  }
+  .text-secondary {
+    color: $text-color;
   }
 }

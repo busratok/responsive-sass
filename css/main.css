@@ -18,6 +18,10 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.about-bgImg-container .about__bio-image {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
 
 .about__bio-image {
   text-align: center;
@@ -25,7 +29,7 @@
 .about__bio-image p {
   font-size: 1.5rem;
   margin: 4rem;
-  color: #df2d2f;
+  color: #eee;
   font-family: "Press Start 2P", cursive;
   line-height: 2rem;
 }
@@ -71,15 +75,17 @@
 }
 .contact__list {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   font-size: 1.5rem;
   gap: 3rem;
   justify-content: center;
   align-items: flex-start;
 }
-.contact .text-secondary {
+.contact i {
   color: #df2d2f;
+}
+.contact .text-secondary {
+  color: #eee;
 }
 
 .home-bgImg-container {
@@ -95,10 +101,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
 .home__name {
-  font-size: 5rem;
+  font-size: 2rem;
   border-bottom: 2px solid #eee;
   font-family: "Press Start 2P", cursive;
 }
@@ -166,8 +172,9 @@
 footer.horizontal {
   height: 10vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   padding: 1rem;
 }
 
@@ -204,15 +211,39 @@ footer.middle {
   height: 10vh;
   padding: 1rem;
 }
-.nav__list {
+.nav__header {
   text-align: right;
 }
-.nav__item {
-  display: inline;
+.nav__toggle {
+  color: #df2d2f;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+}
+.nav__toggle--rotate {
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+.nav__list {
+  display: none;
+  text-align: left;
   padding: 1rem;
 }
+.nav__show--list {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  left: -1rem;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 5;
+}
+.nav__item {
+  padding: 1rem;
+  list-style: none;
+}
 .nav__link {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   font-family: "Press Start 2P", cursive;
   transition: all 1s;
@@ -226,152 +257,92 @@ footer.middle {
 
 @media screen and (max-width: 576px) {
   .about-bgImg-container {
-    height: 70vh;
+    height: 40vh;
     width: 100%;
     background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../images/mr-robot-hood-city-silhouette-artwork-a2ngxex75g6rm078.jpg");
     background-position: center center;
     background-size: cover;
   }
+  .about__bio-image p {
+    display: none;
+  }
 }
-@media screen and (min-width: 0px) {
-  .nav {
-    padding: 0.5rem;
+@media screen and (min-width: 800px) {
+  .nav__center {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .nav__toggle {
+    display: none;
   }
   .nav__list {
-    text-align: center;
+    display: flex;
   }
-  .nav__item {
-    padding-right: 0.7rem;
-  }
-  .nav .nav__link {
-    font-size: 0.9rem;
-  }
-  .contact h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  .contact__list {
-    gap: 2rem 1.2rem;
+  .nav__link {
     font-size: 1.2rem;
   }
-}
-@media screen and (min-width: 576px) {
-  .nav {
-    padding: 0.7rem;
-  }
-  .nav__list {
-    text-align: right;
-  }
-  .nav__item {
-    padding-right: 1rem;
-  }
-  .nav .nav__link {
-    font-size: 1rem;
-  }
-  .contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .contact__list {
-    gap: 2.5rem 2rem;
-    font-size: 1.5rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .nav__item {
-    padding-right: 1.3rem;
-  }
-  .nav .nav__link {
-    font-size: 1.3rem;
+  .home__name {
+    font-size: 3rem;
   }
   .projects__item {
-    width: 50%;
+    width: 45%;
+  }
+  footer.horizontal {
+    flex-direction: row;
+    justify-content: center;
   }
 }
-@media screen and (min-width: 1024px) {
-  .nav__item {
-    padding-right: 1.5rem;
-  }
-  .nav .nav__link {
-    font-size: 1.5rem;
+@media screen and (min-width: 1250px) {
+  .home__name {
+    font-size: 5rem;
   }
   .projects__item {
-    width: 30%;
+    width: 32%;
   }
 }
 @media screen and (max-width: 576px) {
   .about-bgImg-container {
-    height: 70vh;
+    height: 40vh;
     width: 100%;
     background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../images/mr-robot-hood-city-silhouette-artwork-a2ngxex75g6rm078.jpg");
     background-position: center center;
     background-size: cover;
   }
+  .about__bio-image p {
+    display: none;
+  }
 }
-@media screen and (min-width: 0px) {
-  .nav {
-    padding: 0.5rem;
+@media screen and (min-width: 800px) {
+  .nav__center {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .nav__toggle {
+    display: none;
   }
   .nav__list {
-    text-align: center;
+    display: flex;
   }
-  .nav__item {
-    padding-right: 0.7rem;
-  }
-  .nav .nav__link {
-    font-size: 0.9rem;
-  }
-  .contact h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  .contact__list {
-    gap: 2rem 1.2rem;
+  .nav__link {
     font-size: 1.2rem;
   }
-}
-@media screen and (min-width: 576px) {
-  .nav {
-    padding: 0.7rem;
-  }
-  .nav__list {
-    text-align: right;
-  }
-  .nav__item {
-    padding-right: 1rem;
-  }
-  .nav .nav__link {
-    font-size: 1rem;
-  }
-  .contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .contact__list {
-    gap: 2.5rem 2rem;
-    font-size: 1.5rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .nav__item {
-    padding-right: 1.3rem;
-  }
-  .nav .nav__link {
-    font-size: 1.3rem;
+  .home__name {
+    font-size: 3rem;
   }
   .projects__item {
-    width: 50%;
+    width: 45%;
+  }
+  footer.horizontal {
+    flex-direction: row;
+    justify-content: center;
   }
 }
-@media screen and (min-width: 1024px) {
-  .nav__item {
-    padding-right: 1.5rem;
-  }
-  .nav .nav__link {
-    font-size: 1.5rem;
+@media screen and (min-width: 1250px) {
+  .home__name {
+    font-size: 5rem;
   }
   .projects__item {
-    width: 30%;
+    width: 32%;
   }
 }
 body {

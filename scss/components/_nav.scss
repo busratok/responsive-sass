@@ -1,18 +1,45 @@
 .nav {
   height: 10vh;
   padding: 1rem;
+  &__header {
+    text-align: right;
+  }
+  &__toggle {
+    color: $secondary-color;
+    background-color: transparent;
+    border: none;
+    font-size: 1.8rem;
+  }
+  &__toggle--rotate {
+    transform: rotate(90deg);
+    @include transition(0.5s);
+  }
 
   &__list {
-    text-align: right;
+    // height: 0;
+    // overflow: hidden;
+    display: none;
+    text-align: left;
+    padding: 1rem;
+  }
+  &__show--list {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    left: -1rem;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 5;
   }
 
   &__item {
-    display: inline;
+    // display: inline;
     padding: 1rem;
+    list-style: none;
   }
 
   &__link {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     font-family: $font-family-techno;
     @include transition(1s);
